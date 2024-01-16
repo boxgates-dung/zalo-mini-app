@@ -9,7 +9,7 @@ const Subscription: FC = () => {
   return (
     <Box className="m-4" onClick={onClick}>
       <Box
-        className="bg-green text-white rounded-xl p-4 space-y-2"
+        className="bg-amber-400 text-white rounded-xl p-4 space-y-2"
         style={{
           backgroundImage: `url(${subscriptionDecor})`,
           backgroundPosition: "right 8px center",

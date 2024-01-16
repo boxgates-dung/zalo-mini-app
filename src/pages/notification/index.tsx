@@ -4,9 +4,12 @@ import { useRecoilValue } from "recoil";
 import { notificationsState } from "state";
 import { Box, Header, Page, Text } from "zmp-ui";
 import { Divider } from "components/divider";
+import { useLocation, useNavigate } from "react-router";
 
 const NotificationList: FC = () => {
   const notifications = useRecoilValue(notificationsState);
+  const navigate = useNavigate();
+
   return (
     <Box className="bg-background">
       <ListRenderer
@@ -16,7 +19,10 @@ const NotificationList: FC = () => {
           <img className="w-10 h-10 rounded-full" src={item.image} />
         )}
         renderRight={(item) => (
-          <Box key={item.id}>
+          <Box 
+          key={item.id}
+          onClick={() => navigate('/notification/detail')}
+          >
             <Text.Header>{item.title}</Text.Header>
             <Text
               size="small"
