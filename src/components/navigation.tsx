@@ -3,21 +3,29 @@ import React, { FC, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { MenuItem } from "types/menu";
 import { BottomNavigation, Icon } from "zmp-ui";
-import { CartIcon } from "./cart-icon";
+import { CartIcon } from "./icons/cart-icon";
+import { TicketIcon } from './icons/ticket-icon';
+import { NotifIcon } from "./icons/notif-icon";
 
 const tabs: Record<string, MenuItem> = {
   "/": {
     label: "Trang chủ",
     icon: <Icon icon="zi-home" />,
   },
+  "/booking": {
+    label: "Booking",
+    icon: <TicketIcon />,
+    activeIcon: <TicketIcon active />,
+  },
+  // "/cart": {
+  //   label: "Giỏ hàng",
+  //   icon: <CartIcon />,
+  //   activeIcon: <CartIcon active />,
+  // },
   "/notification": {
     label: "Thông báo",
-    icon: <Icon icon="zi-notif" />,
-  },
-  "/cart": {
-    label: "Giỏ hàng",
-    icon: <CartIcon />,
-    activeIcon: <CartIcon active />,
+    icon: <NotifIcon />,
+    activeIcon: <NotifIcon active />,
   },
   "/profile": {
     label: "Cá nhân",

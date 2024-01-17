@@ -23,7 +23,7 @@ export const CartIcon: FC<{ active?: boolean }> = ({ active }) => {
       {cart.length > 0 && (
         <Box className="absolute -right-2 -top-[2px] p-[2px] bg-background rounded-full">
           <Text
-            className="w-4 h-4 bg-red-500 rounded-full text-white"
+            className="w-4 h-4 bg-[var(--zmp-primary-color)] rounded-full text-white"
             size="xxxxSmall"
           >
             {cart.length > 9 ? "9+" : cart.length}

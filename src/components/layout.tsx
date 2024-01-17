@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Route, Routes } from "react-router";
-import { Box } from "zmp-ui";
+import { Box} from "zmp-ui";
 import { Navigation } from "./navigation";
 import HomePage from "pages/index";
 import CategoryPage from "pages/category";
@@ -8,7 +8,9 @@ import CartPage from "pages/cart";
 import NotificationPage from "pages/notification/index";
 import ProfilePage from "pages/profile";
 import SearchPage from "pages/search";
-import DetailPage from "pages/notification/detail";
+import NotificationDetailPage from "pages/notification/notification-detail";
+import BookingPage from "pages/Booking/index";
+
 import { getSystemInfo } from "zmp-sdk";
 import { ScrollRestoration } from "./scroll-restoration";
 
@@ -36,7 +38,8 @@ export const Layout: FC = () => {
           <Route path="/cart" element={<CartPage />}></Route>
           <Route path="/profile" element={<ProfilePage />}></Route>
 
-          <Route path="/notification/detail" element={<DetailPage />}></Route>
+          <Route path="/notification/detail" element={<NotificationDetailPage />}></Route>
+          <Route path="/booking" element={<BookingPage />}></Route>
         </Routes>
       </Box>
       <Navigation />
