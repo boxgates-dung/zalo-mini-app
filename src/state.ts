@@ -283,6 +283,7 @@ export const notificationsState = atom<Notification[]>({
     {
       id: 1,
       image: logo,
+      date: "09/01/2024 12:60",
       title: "Chào bạn mới",
       content:
         "Cảm ơn đã sử dụng ZaUI Coffee, bạn có thể dùng ứng dụng này để tiết kiệm thời gian xây dựng",
@@ -290,6 +291,28 @@ export const notificationsState = atom<Notification[]>({
     {
       id: 2,
       image: logo,
+      date: "09/01/2024 12:60",
+      title: "Giảm 50% lần đầu mua hàng",
+      content: "Nhập WELCOME để được giảm 50% giá trị đơn hàng đầu tiên order",
+    },
+    {
+      id: 2,
+      image: logo,
+      date: "09/01/2024 12:60",
+      title: "Giảm 50% lần đầu mua hàng",
+      content: "Nhập WELCOME để được giảm 50% giá trị đơn hàng đầu tiên order",
+    },
+    {
+      id: 2,
+      image: logo,
+      date: "09/01/2024 12:60",
+      title: "Giảm 50% lần đầu mua hàng",
+      content: "Nhập WELCOME để được giảm 50% giá trị đơn hàng đầu tiên order",
+    },
+    {
+      id: 2,
+      image: logo,
+      date: "09/01/2024 12:60",
       title: "Giảm 50% lần đầu mua hàng",
       content: "Nhập WELCOME để được giảm 50% giá trị đơn hàng đầu tiên order",
     },

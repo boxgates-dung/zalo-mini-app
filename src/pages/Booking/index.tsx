@@ -13,7 +13,8 @@ const PromotionList: FC = () => {
   return (
     <Box className="bg-background">
       <ListRenderer
-        noDivider
+        divider="full-width"
+
         items={notifications}
         renderLeft={(item) => (
           <img className="w-10 h-10 rounded-full" src={item.image} />
@@ -44,7 +45,8 @@ const EventList: FC = () => {
   return (
     <Box className="bg-background">
       <ListRenderer
-        noDivider
+        divider="full-width"
+
         items={notifications}
         renderLeft={(item) => (
           <img className="w-10 h-10 rounded-full" src={item.image} />
@@ -74,8 +76,8 @@ const BookingPage: FC = () => {
 
   return (
     <Page>
-      <Header title="Thông báo" showBackIcon={false} />
-      <Tabs id="contact-list" className="tabs-full-width" onChange={(e) => console.log(e) }>
+      <Header title="Booking" showBackIcon={false} />
+      <Tabs id="contact-list" className="tabs-full-width" onChange={(e) => console.log(e)}>
         <Tabs.Tab key="tab-promotion" label="Xe liên tỉnh">
           <PromotionList />
         </Tabs.Tab>

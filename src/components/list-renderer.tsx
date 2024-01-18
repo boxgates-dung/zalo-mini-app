@@ -9,7 +9,8 @@ interface ListRendererProps<T> {
   renderRight: (item: T) => ReactNode;
   renderKey?: (item: T) => string;
   onClick?: (item: T) => void;
-  noDivider?: boolean;
+  divider?: 'none' | 'normal' | 'full-width';
+  itemCenter?: boolean;
 }
 
 export function ListRenderer<T>({
@@ -20,7 +21,8 @@ export function ListRenderer<T>({
   renderRight,
   renderKey,
   onClick,
-  noDivider,
+  divider,
+  itemCenter = false,
 }: ListRendererProps<T>) {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const collapsedItems = useMemo(() => {
@@ -35,15 +37,18 @@ export function ListRenderer<T>({
           <div
             key={renderKey ? renderKey(item) : i}
             onClick={() => onClick?.(item)}
-            className="flex space-x-4 p-4 last:pb-0"
+            className="flex space-x-4 p-4 last:pb-0 relative"
           >
             {renderLeft(item)}
             <Box className="flex-1 min-w-0 relative">
               {renderRight(item)}
-              {!noDivider && i < list.length - 1 && (
+              {divider === 'normal' && i < list.length - 1 && (
                 <hr className="absolute left-0 -right-4 -bottom-4 border-divider border-t-[0.5px]"></hr>
               )}
             </Box>
+            {divider === 'full-width' && i < list.length - 1 && (
+              <hr className="absolute w-100 -left-4 right-0 bottom-0 border-divider border-t-[0.5px]"></hr>
+            )}
           </div>
         ))}
       </Box>

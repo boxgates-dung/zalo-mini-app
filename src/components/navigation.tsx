@@ -1,8 +1,8 @@
 import { useVirtualKeyboardVisible } from "hooks";
 import React, { FC, useMemo, useState } from "react";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation } from "react-router";
 import { MenuItem } from "types/menu";
-import { BottomNavigation, Icon } from "zmp-ui";
+import { BottomNavigation, Icon, useNavigate } from "zmp-ui";
 import { CartIcon } from "./icons/cart-icon";
 import { TicketIcon } from './icons/ticket-icon';
 import { NotifIcon } from "./icons/notif-icon";
@@ -12,30 +12,29 @@ const tabs: Record<string, MenuItem> = {
     label: "Trang chủ",
     icon: <Icon icon="zi-home" />,
   },
-  "/booking": {
-    label: "Booking",
-    icon: <TicketIcon />,
-    activeIcon: <TicketIcon active />,
-  },
-  // "/cart": {
-  //   label: "Giỏ hàng",
-  //   icon: <CartIcon />,
-  //   activeIcon: <CartIcon active />,
+  // "/booking": {
+  //   label: "Booking",
+  //   icon: <TicketIcon />,
+  //   activeIcon: <TicketIcon active />,
   // },
-  "/notification": {
-    label: "Thông báo",
-    icon: <NotifIcon />,
-    activeIcon: <NotifIcon active />,
+  "/cart": {
+    label: "Hoạt động",
+    icon: <Icon icon="zi-clock-1-solid" />,
   },
-  "/profile": {
-    label: "Cá nhân",
-    icon: <Icon icon="zi-user" />,
+  // "/notification": {
+  //   label: "Thông báo",
+  //   icon: <NotifIcon />,
+  //   activeIcon: <NotifIcon active />,
+  // },
+  "/individual": {
+    label: "Tài khoản",
+    icon: <Icon icon="zi-user-circle-solid" />,
   },
 };
 
 export type TabKeys = keyof typeof tabs;
 
-export const NO_BOTTOM_NAVIGATION_PAGES = ["/search", "/category"];
+export const NO_BOTTOM_NAVIGATION_PAGES = ["/search", "/category", "/notification/detail"];
 
 export const Navigation: FC = () => {
   const [activeTab, setActiveTab] = useState<TabKeys>("/");
@@ -64,7 +63,11 @@ export const Navigation: FC = () => {
           label={tabs[path].label}
           icon={tabs[path].icon}
           activeIcon={tabs[path].activeIcon}
-          onClick={() => navigate(path)}
+          onClick={() => {
+            navigate(path, {
+              animate: false,
+            })
+          }}
         />
       ))}
     </BottomNavigation>

@@ -23,7 +23,7 @@
     "/404"
   ],
   "template": {
-    "primaryColor": "#ffba00",
+    "primaryColor": "#ffc933",
     "prefixCurrencySymbol": false,
     "currencySymbol": "đ",
     "headerLogo": ""
