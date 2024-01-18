@@ -9,7 +9,7 @@ export const NotifIcon: FC<{ active?: boolean }> = ({ active }) => {
   return (
     <Box className="relative">
       
-      <Icon icon="zi-notif" className="relative top-[-10px]" />
+      <Icon icon="zi-notif" className="relative" />
       {cart.length > 0 && (
         <Box className="absolute -right-2 -top-[2px] p-[2px] bg-background rounded-full">
           <Text

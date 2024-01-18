@@ -7,6 +7,7 @@ import { SettingIcon } from "components/icons/setting-icon";
 import { HeadphoneIcon } from "components/icons/headphone-icon";
 import { PaymentIcon } from "components/icons/payment-icon";
 import { Divider } from "components/divider";
+import { NotifIcon } from "components/icons/notif-icon";
 
 const Profile: FC = () => {
   const onClick = useToBeImplemented();
@@ -151,7 +152,7 @@ const IndividualPage: FC = () => {
       <Header 
       showBackIcon={true} 
       backgroundColor="var(--zmp-primary-color)" 
-      backIcon={(<Icon icon="zi-notif" />)}
+      backIcon={(<NotifIcon />)}
       onBackClick={()=>{
         navigate('/notification', {
           animate: false,
